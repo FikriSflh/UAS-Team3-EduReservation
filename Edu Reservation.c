@@ -47,6 +47,30 @@ void displaySchedule() {
     printf("2. MKB 1B\n");
     printf("3. MKB 1C\n");
     printf("4. LAB\n");
-    printf("5. SMARTCLASS\n");
+    printf("5. MKB 29\n");
     printf("6. MKB 30\n");
 }
+void displayPersonalSchedule(const struct User* user) {
+    printf("\nJadwal kelas Anda:\n");
+    for (int i = 0; i < user->bookingCount; ++i) {
+        printf("Ruangan: %s, %s\n", user->bookings[i].room, user->bookings[i].schedule);
+    }
+}
+
+void displayAvailableSchedules() {
+    printf("\nPilihan jadwal:\n");
+    printf("1. Senin  07:00-09:30\n");
+    printf("2. Senin  09:30-11:10\n");
+    printf("3. Senin  11:10-13:00\n");
+    printf("4. Senin  13:00-15:00\n");
+    printf("5. Senin  15:30-17:10\n");
+    printf("6. Waktu khusus\n");
+}
+
+int main() {
+    struct User users[MAX_BOOKINGS];
+    int userCount = 0;
+
+    while (1) {
+        char nim[MAX_NIM_LENGTH];
+        char password[MAX_PASSWORD_LENGTH];
