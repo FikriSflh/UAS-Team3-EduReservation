@@ -111,3 +111,39 @@ int main() {
             printf("Login gagal. Password salah.\n");
             continue;
         }
+while (1) {
+            // Display menu
+            printf("\nMenu:\n");
+            printf("1. Booking kelas\n");
+            printf("2. Lihat jadwal kelas tersedia\n");
+            printf("3. Lihat jadwal pribadi\n");
+            printf("4. Pembatalan booking kelas\n");
+            printf("5. Logout\n");
+            printf("Pilih menu (1-5): ");
+
+            int choice;
+            scanf("%d", &choice);
+
+            switch (choice) {
+                case 1: {
+                    // Booking kelas
+                    displaySchedule();
+                    printf("Pilih ruangan (1-6): ");
+                    int roomChoice;
+                    scanf("%d", &roomChoice);
+
+                    if (roomChoice < 1 || roomChoice > MAX_ROOMS) {
+                        printf("Pilihan ruangan tidak valid.\n");
+                        continue;
+                    }
+
+                    printf("Pilih jadwal:\n");
+                    displayAvailableSchedules();
+                    printf("Pilih waktu (1-6): ");
+                    int scheduleChoice;
+                    scanf("%d", &scheduleChoice);
+
+                    if (scheduleChoice < 1 || scheduleChoice > MAX_SCHEDULES) {
+                        printf("Pilihan waktu tidak valid.\n");
+                        continue;
+                    }
